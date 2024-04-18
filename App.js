@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, TextInput, View, ScrollView } from 'react-native';
+import { StyleSheet, TextInput, View, ScrollView, Switch } from 'react-native';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 export default function App() {
@@ -9,12 +9,14 @@ export default function App() {
   const [description, setDescription] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
-  let RTY = false;
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  
 
   return (
     <View>
-      <Ionicons name="md-checkmark-circle" size={32} color="green" />  
-      <AntDesign name="carryout" size={24} color="black" />
+     
+
       <TextInput
         style={{ height: 44, borderColor: "gray", borderWidth: 1, marginBottom: 10 }}
         onChangeText={text => {
@@ -53,7 +55,15 @@ export default function App() {
         }}
         value={password}
       />
-      
+       { isEnabled ? <Ionicons name="md-checkmark-circle" size={32} color="green" /> : <AntDesign name="carryout" size={24} color="black" /> }
+     
+     <Switch
+       trackColor={{false: '#767577', true: '#81b0ff'}}
+       thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+       ios_backgroundColor="#3e3e3e"
+       onValueChange={toggleSwitch}
+       value={isEnabled}
+     />
     </View>
   );
 }
