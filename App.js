@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, TextInput, View, ScrollView, Switch } from 'react-native';
+import { StyleSheet, TextInput, View, ScrollView, Switch, Text } from 'react-native';
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <View>
      
-      <<View>TYU</View>
+      <Text style={[styles.title]}>My text</Text>
       <TextInput
         style={{ height: 44, borderColor: "gray", borderWidth: 1, marginBottom: 10 }}
         onChangeText={text => {
@@ -74,6 +74,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
 
