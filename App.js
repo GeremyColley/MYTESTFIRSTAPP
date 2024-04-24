@@ -16,7 +16,7 @@ export default function App() {
   return (
     <View>
      
-
+      <<View>TYU</View>
       <TextInput
         style={{ height: 44, borderColor: "gray", borderWidth: 1, marginBottom: 10 }}
         onChangeText={text => {
@@ -55,7 +55,7 @@ export default function App() {
         }}
         value={password}
       />
-       { isEnabled ? <Ionicons name="md-checkmark-circle" size={32} color="green" /> : <AntDesign name="carryout" size={24} color="black" /> }
+      { isEnabled ? <Ionicons name="md-checkmark-circle" size={32} color="green" /> : <AntDesign name="carryout" size={24} color="black" /> }
      
      <Switch
        trackColor={{false: '#767577', true: '#81b0ff'}}
