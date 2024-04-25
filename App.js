@@ -27,6 +27,7 @@ export default function App() {
           alert("Coucou");}
         }
       >
+        <Text style={[styles.title]}>Bébé a manger à quelle heure</Text>
         <MaterialCommunityIcons name="baby-bottle-outline" size={24} color="black" />
       </TouchableOpacity>
       <MaterialCommunityIcons name="sleep" size={24} color="black" />
