@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, TextInput, View, ScrollView, Switch, Text } from 'react-native';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
+import { StyleSheet, TextInput, View, ScrollView, Switch, Text, Button, TouchableOpacity } from 'react-native';
+import { Ionicons, AntDesign, MaterialCommunityIcons} from '@expo/vector-icons';
 
 export default function App() {
 
@@ -16,7 +16,20 @@ export default function App() {
   return (
     <View>
      
-      <Text style={[styles.title]}>My text</Text>
+      <Text style={[styles.title]}>Application pour le suivie de bébé</Text>
+
+      
+      <MaterialCommunityIcons name="baby" size={24} color="black" />
+      <Text onPress={()=>{alert("Coucou");}}><MaterialCommunityIcons name="human-baby-changing-table" size={24} color="black" /></Text>
+      <TouchableOpacity 
+        onPress={()=>{
+          console.log("coucou");
+          alert("Coucou");}
+        }
+      >
+        <MaterialCommunityIcons name="baby-bottle-outline" size={24} color="black" />
+      </TouchableOpacity>
+      <MaterialCommunityIcons name="sleep" size={24} color="black" />
       <TextInput
         style={{ height: 44, borderColor: "gray", borderWidth: 1, marginBottom: 10 }}
         onChangeText={text => {
@@ -24,7 +37,7 @@ export default function App() {
         }}
         value={email}
       />
-
+     
       <TextInput
         style={{height: 100, borderColor: "gray", borderWidth: 1, marginBottom: 10}}
         placeholder="Description"
@@ -100,4 +113,8 @@ const styles = StyleSheet.create({
       <View style={{ height: 400, backgroundColor: "deeppink" }}></View>
     </ScrollView>
 
+
+    <Button title="tyuu" onPress={()=>{alert("Coucou");}}>
+        <Ionicons name="human-baby-changing-table" size={24} color="black" />
+      </Button>
 */
